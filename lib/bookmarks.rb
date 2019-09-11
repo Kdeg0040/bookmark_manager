@@ -1,6 +1,6 @@
 require 'pg'
 class Bookmarks
-  attr_reader :id, :title,:url
+  attr_reader :id, :title, :url
 
   def self.all
       #bookmarks_array = []
@@ -31,6 +31,4 @@ class Bookmarks
     @title = title
     @url = url
   end
-
 end
-

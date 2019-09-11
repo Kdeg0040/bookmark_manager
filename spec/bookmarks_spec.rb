@@ -4,15 +4,17 @@ require 'pg'
 describe Bookmarks do
   it '.all' do
     conn = PG.connect(dbname: 'bookmark_manager_test')
-    conn.exec("INSERT INTO bookmarks (url,title) VALUES ('http://www.makersacademy.com','Makers Academy');")
-    conn.exec("INSERT INTO bookmarks (url,title) VALUES('http://www.destroyallsoftware.com','Destroy All Software');")
-    conn.exec("INSERT INTO bookmarks (url,title) VALUES('http://www.google.com','Google');")
+
+    bookmark = Bookmarks.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
+    Bookmarks.create(url: 'http://www.destroyallsoftware.com', title: 'Destroy All Software')
+    Bookmarks.create(url: 'http://www.google.com', title: 'Google')
+
     bookmarks = Bookmarks.all
     expect(bookmarks.length).to eq 3
     expect(bookmarks.first).to be_a Bookmarks
+    expect(bookmarks.first.id).to eq bookmark.id
     expect(bookmarks.first.title).to eq 'Makers Academy'
     expect(bookmarks.first.url).to eq 'http://www.makersacademy.com'
-    # expect(bookmarks.first.id).to eq bookmarks.id
   end
 
   it '.create' do

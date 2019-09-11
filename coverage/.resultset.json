@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Ben/Dropbox/Dev/Makers/Week4/bookmark_manager/spec/bookmarks_spec.rb": [
+      "/Users/karlo/Dropbox/Makers/Projects/week4/bookmark_manager/spec/bookmarks_spec.rb": [
         1,
         1,
         null,
@@ -28,7 +28,21 @@
         null,
         null
       ],
-      "/Users/Ben/Dropbox/Dev/Makers/Week4/bookmark_manager/spec/features/viewing_bookmarks_spec.rb": [
+      "/Users/karlo/Dropbox/Makers/Projects/week4/bookmark_manager/spec/features/creating_bookmarks_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/karlo/Dropbox/Makers/Projects/week4/bookmark_manager/spec/features/viewing_bookmarks_spec.rb": [
         1,
         null,
         1,
@@ -47,15 +61,10 @@
         1,
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null
       ]
     },
-    "timestamp": 1568132015
+    "timestamp": 1568194839
   }
 }

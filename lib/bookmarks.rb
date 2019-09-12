@@ -21,18 +21,18 @@ class Bookmarks
   def self.create(title: , url:)
     conn = connect_database
 
-    result = conn.exec("INSERT INTO bookmarks (url,title) VALUES ('#{url}','#{title}') RETURNING id, url, title")
+    result = DatabaseConnection.query("INSERT INTO bookmarks (url,title) VALUES ('#{url}','#{title}') RETURNING id, url, title")
     Bookmarks.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
 
   def self.delete(id:)
     conn = connect_database
-    conn.exec("DELETE FROM bookmarks WHERE id = #{id}")
+    DatabaseConnection.query("DELETE FROM bookmarks WHERE id = #{id}")
   end
 
   def self.update(id:, url:, title:)
     conn = connect_database
-    res = conn.exec("UPDATE bookmarks SET url = '#{url}', title = '#{title}' WHERE id = '#{id}' RETURNING id, url, title;")
+    res = DatabaseConnection.query("UPDATE bookmarks SET url = '#{url}', title = '#{title}' WHERE id = '#{id}' RETURNING id, url, title;")
     Bookmarks.new(id: res[0]['id'], title: res[0]['title'], url: res[0]['url'])
   end
 
@@ -40,9 +40,9 @@ class Bookmarks
 
   def self.connect_database
     if ENV['ENVIRONMENT'] == 'test'
-        conn = PG.connect(dbname: 'bookmark_manager_test')
+        conn = DatabaseConnection.setup('bookmark_manager_test')
     else
-        conn = PG.connect(dbname: 'bookmark_manager')
+        conn = DatabaseConnection.setup('bookmark_manager')
     end
   end
 end

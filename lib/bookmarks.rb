@@ -30,6 +30,12 @@ class Bookmarks
     conn.exec("DELETE FROM bookmarks WHERE id = #{id}")
   end
 
+  def self.update(id:, url:, title:)
+    conn = connect_database
+    res = conn.exec("UPDATE bookmarks SET url = '#{url}', title = '#{title}' WHERE id = '#{id}' RETURNING id, url, title;")
+    Bookmarks.new(id: res[0]['id'], title: res[0]['title'], url: res[0]['url'])
+  end
+
   private
 
   def self.connect_database

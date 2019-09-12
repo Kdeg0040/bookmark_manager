@@ -65,6 +65,26 @@
         null,
         null
       ],
+      "/Users/karlo/Dropbox/Makers/Projects/week4/bookmark_manager/spec/features/updating_a_bookmark_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/karlo/Dropbox/Makers/Projects/week4/bookmark_manager/spec/features/viewing_bookmarks_spec.rb": [
         1,
         null,
@@ -88,6 +108,6 @@
         null
       ]
     },
-    "timestamp": 1568291482
+    "timestamp": 1568297836
   }
 }

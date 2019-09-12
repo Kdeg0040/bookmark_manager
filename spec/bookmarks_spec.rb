@@ -23,4 +23,10 @@ describe Bookmarks do
     expect(bookmarks.first.title).to include('Test Page')
     expect(bookmarks.first.url).to include("www.testpage.com")
   end
+
+  it '.delete' do
+    bookmark = Bookmarks.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+    Bookmarks.delete(id: bookmark.id)
+    expect(Bookmarks.all.length).to eq 0
+  end
 end

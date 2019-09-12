@@ -1,4 +1,4 @@
-require './app.rb'
+require './app'
 
 feature 'adding bookmarks' do
   scenario 'user can add a bookmark' do

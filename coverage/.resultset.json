@@ -27,6 +27,12 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/karlo/Dropbox/Makers/Projects/week4/bookmark_manager/spec/features/creating_bookmarks_spec.rb": [
@@ -39,6 +45,22 @@
         1,
         1,
         null,
+        1,
+        null,
+        null
+      ],
+      "/Users/karlo/Dropbox/Makers/Projects/week4/bookmark_manager/spec/features/deleting_a_bookmark_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
         1,
         null,
         null
@@ -66,6 +88,6 @@
         null
       ]
     },
-    "timestamp": 1568202697
+    "timestamp": 1568291482
   }
 }

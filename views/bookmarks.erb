@@ -1,12 +1,17 @@
 <h1>Hello there you are in the bookmarks page</h1>
 
-<form action="/bookmarks" method="post">
+<form action="/bookmarks/new" method="post">
   <input type="text" placeholder="enter title" name="title" />
   <input type="text" placeholder="enter URL" name="url" />
   <input type="submit" value="Submit" />
 </form>
 
-<ul><%@bookmarks.each do |bookmarks|%>
-    <li><a href="<%=bookmarks.url%>"><%=bookmarks.title%></a></li>
+<ul><%@bookmarks.each do |bookmark|%>
+    <li><a href="<%=bookmark.url%>"><%=bookmark.title%></a>
+        <form action="/bookmarks/<%= bookmark.id %>" method="post">
+          <input type="hidden" name="_method" value="DELETE" />
+          <input type="submit" value="delete" />
+        </form>
+    </li>
     <%end%>
 </ul>

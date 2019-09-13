@@ -2,10 +2,11 @@ source 'http://rubygems.org'
 
 ruby '2.6.3'
 
-gem 'sinatra'
-#gem 'rspec'
 gem 'capybara'
 gem 'pg'
+gem 'rspec'
+gem 'sinatra'
+gem 'sinatra-flash'
 
 group :test do
   gem 'capybara'
@@ -14,4 +15,5 @@ group :test do
   gem 'rubocop', '0.74.0'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'sinatra-flash'
 end

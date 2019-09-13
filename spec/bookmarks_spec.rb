@@ -18,10 +18,10 @@ describe Bookmarks do
   end
 
   it '.create' do
-    Bookmarks.create(title: 'Test Page', url: 'www.testpage.com')
+    Bookmarks.create(title: 'Test Page', url: 'http://www.testpage.com')
     bookmarks = Bookmarks.all
     expect(bookmarks.first.title).to include('Test Page')
-    expect(bookmarks.first.url).to include("www.testpage.com")
+    expect(bookmarks.first.url).to include("http://www.testpage.com")
   end
 
   it '.delete' do

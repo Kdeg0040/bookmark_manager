@@ -29,4 +29,13 @@ describe Bookmarks do
     Bookmarks.delete(id: bookmark.id)
     expect(Bookmarks.all.length).to eq 0
   end
+
+  it '.comments' do
+    bookmark = Bookmarks.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+    DatabaseConnection.query("INSERT INTO comments (id, text, bookmark_id) VALUES(1, 'Test comment', #{bookmark.id})")
+
+    comment = bookmark.comments.first
+
+    expect(comment['text']).to eq 'Test comment'
+  end
 end

@@ -1,5 +1,6 @@
 require './lib/bookmarks.rb'
 require 'pg'
+require 'database_helpers'
 
 describe Bookmarks do
   it '.all' do
@@ -10,6 +11,7 @@ describe Bookmarks do
     Bookmarks.create(url: 'http://www.google.com', title: 'Google')
 
     bookmarks = Bookmarks.all
+
     expect(bookmarks.length).to eq 3
     expect(bookmarks.first).to be_a Bookmarks
     expect(bookmarks.first.id).to eq bookmark.id
@@ -36,6 +38,6 @@ describe Bookmarks do
 
     comment = bookmark.comments.first
 
-    expect(comment['text']).to eq 'Test comment'
+    expect(comment.text).to eq 'Test comment'
   end
 end

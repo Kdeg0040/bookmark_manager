@@ -7,7 +7,9 @@
 </form>
 
 <ul><%@bookmarks.each do |bookmark|%>
-    <li><a href="<%=bookmark.url%>"><%=bookmark.title%></a>
+    <li>
+        <table>
+        <a href="<%=bookmark.url%>"><%=bookmark.title%></a>
         <form action="/bookmarks/<%= bookmark.id %>" method="post">
           <input type="hidden" name="_method" value="DELETE" />
           <input type="submit" value="delete" />
@@ -20,9 +22,10 @@
         </form>
         <ul>
           <% bookmark.comments.each do |comment| %>
-            <li><%= comment['text'] %></li>
+            <li><%= comment.text %></li>
           <% end %>
         </ul>
+        </table>
     </li>
     <%end%>
 </ul>
